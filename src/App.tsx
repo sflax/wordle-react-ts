@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React, { useState, useContext } from "react";
 import "./App.scss";
 import Navbar from "./componenets/Navbar/Navbar";
 import GuessBoard from "./componenets/GuessBoard/GuessBoard";
 import KeyBoard from "./componenets/KeyBoard/KeyBoard";
+import { BoardGameContext } from "./Providers/wordle-context";
 
-const boardGame = [
+const boardGame: string[][] = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
   ["", "", "", "", ""],
@@ -16,7 +16,7 @@ const boardGame = [
 
 function App() {
   const [board, setBoard] = useState(boardGame);
-  const [currentTry, setCurrentTry] = useState({
+  const [currentGuess, setCurrentGuess] = useState({
     letterPos: 0,
     rowNum: 0,
   });
@@ -24,8 +24,10 @@ function App() {
     <div className="board">
       <Navbar />
       {/* </Navbar> */}
-      <GuessBoard />
-      <KeyBoard />
+      <BoardGameContext.Provider value={{ board, setBoard }}>
+        <GuessBoard />
+        <KeyBoard />
+      </BoardGameContext.Provider>
     </div>
   );
 }
