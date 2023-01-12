@@ -1,15 +1,16 @@
 import React from "react";
-import GuessLetter from "./GuessLetter";
+import { RowNum } from "../../types/Position";
+import { GuessLetter } from "./GuessLetter";
 
-function GuessRow() {
+export const GuessRow: React.FC<RowNum> = ({ rowNum }) => {
   const letters: number[] = [0, 1, 2, 3, 4];
   return (
     <div className="row">
       {letters.map((letter) => (
-        <GuessLetter />
+        <GuessLetter letterPos={letter} rowNum={rowNum} />
       ))}
     </div>
   );
-}
+};
 
-export default GuessRow;
+// export default GuessRow;
