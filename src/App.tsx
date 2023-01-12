@@ -21,6 +21,9 @@ function App() {
     rowNum: 0,
     letterPos: 0,
   });
+  const handleKeyUp = (event: any) => {
+    console.log(event.target.value);
+  };
 
   const onAddLetter = (keyValue: string) => {
     //there is no enter handle as per the requirements
@@ -62,7 +65,10 @@ function App() {
           onRemoveLetter,
         }}
       >
-        <div className="board">
+        <div
+          className="board"
+          onKeyUp={(event) => handleKeyUp(event.key.toUpperCase)}
+        >
           <GuessBoard />
           <KeyBoard />
         </div>

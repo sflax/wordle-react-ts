@@ -5,13 +5,18 @@ export const GuessLetter: React.FC<Position> = ({
   letterPos,
   rowNum,
 }: Position) => {
-  const { board } = useContext(BoardGameContext);
+  const { board, currentGuess } = useContext(BoardGameContext);
   const letter = board[rowNum][letterPos];
+
+  const focusLetter: boolean =
+    letterPos === currentGuess.letterPos && rowNum === currentGuess.rowNum;
+
   return (
     <div
-      className="letter-default"
-      data-rowNum={rowNum}
-      data-letterPos={letterPos}
+      className={focusLetter ? "letterInFocus" : "letter-default"}
+      data-rownum={rowNum}
+      data-letterpos={letterPos}
+      key={Math.random.toString()}
     >
       {letter}
     </div>
