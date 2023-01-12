@@ -7,20 +7,21 @@ function KeyBoard({ keyValue }: any) {
   const thirdRow = ["Z", "X", "C", "V", "B", "N", "M"];
   return (
     <div className="keyboard-main">
-      <div className="row">
+      <div className="firstKeyRow">
         {firstRow.map((keyLetter) => {
           return <KeyLetter keyValue={keyLetter} />;
         })}
       </div>
-      <div className="row">
+      <div className="secondKeyRow">
         {secondRow.map((keyLetter) => {
           return <KeyLetter keyValue={keyLetter} />;
         })}
       </div>
-      <div className="row">
+      <div className="thirdKeyRow">
         {thirdRow.map((keyLetter) => {
           return <KeyLetter keyValue={keyLetter} />;
         })}
+        <KeyLetter keyValue={"DEL"} id={"del"} />
       </div>
     </div>
   );

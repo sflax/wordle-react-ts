@@ -6,12 +6,12 @@ export const GuessLetter: React.FC<Position> = ({
   rowNum,
 }: Position) => {
   const { board } = useContext(BoardGameContext);
-  const letter = board[letterPos][rowNum];
+  const letter = board[rowNum][letterPos];
   return (
     <div
       className="letter-default"
-      data-letterPos={letterPos}
       data-rowNum={rowNum}
+      data-letterPos={letterPos}
     >
       {letter}
     </div>
