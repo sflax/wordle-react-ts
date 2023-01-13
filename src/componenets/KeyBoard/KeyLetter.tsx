@@ -12,12 +12,7 @@ function KeyLetter({ keyValue }: any) {
     }
   };
   return (
-    <button
-      className="keyletter-button"
-      id={keyValue}
-      key={Math.random.toString()}
-      onClick={onClickLetter}
-    >
+    <button className="keyletter-button" id={keyValue} onClick={onClickLetter}>
       {keyValue}
     </button>
   );

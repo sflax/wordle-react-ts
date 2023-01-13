@@ -6,7 +6,7 @@ function GuessBoard() {
   return (
     <div className="guessBoard-default">
       {rows.map((row) => (
-        <GuessRow rowNum={row} key={`${row}-row`} />
+        <GuessRow rowNum={row} />
       ))}
     </div>
   );

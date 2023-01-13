@@ -16,7 +16,6 @@ export const GuessLetter: React.FC<Position> = ({
       className={focusLetter ? "letterInFocus" : "letter-default"}
       data-rownum={rowNum}
       data-letterpos={letterPos}
-      key={Math.random.toString()}
     >
       {letter}
     </div>

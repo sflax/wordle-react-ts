@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./App.scss";
 import Navbar from "./componenets/Navbar/Navbar";
 import GuessBoard from "./componenets/GuessBoard/GuessBoard";
@@ -21,15 +21,27 @@ function App() {
     rowNum: 0,
     letterPos: 0,
   });
-  const handleKeyUp = (event: any) => {
-    console.log(event.target.value);
-  };
+
+  // function handleKeyUp(event: string) {
+  //   const charValidation = /^[A-Z]$/.test(event);
+  //   console.log(event);
+
+  //   if (!charValidation) {
+  //     return;
+  //   }
+  //   // onAddLetter(event);
+  // }
 
   const onAddLetter = (keyValue: string) => {
-    //there is no enter handle as per the requirements
     if (keyValue === "DEL") {
       return onRemoveLetter();
     }
+
+    // const charValidation = /^[A-Z]$/.test(keyValue);
+    // if (!charValidation) {
+    //   return;
+    // }
+
     const updatedGuessBoard = [...board];
     updatedGuessBoard[currentGuess.rowNum][currentGuess.letterPos] = keyValue;
     setBoard(updatedGuessBoard);
@@ -67,7 +79,7 @@ function App() {
       >
         <div
           className="board"
-          onKeyUp={(event) => handleKeyUp(event.key.toUpperCase)}
+          // onKeyUp={(event) => handleKeyUp(event.key.toUpperCase())}
         >
           <GuessBoard />
           <KeyBoard />
