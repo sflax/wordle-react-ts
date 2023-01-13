@@ -1,10 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, Key } from "react";
 import "./App.scss";
 import Navbar from "./componenets/Navbar/Navbar";
 import GuessBoard from "./componenets/GuessBoard/GuessBoard";
 import KeyBoard from "./componenets/KeyBoard/KeyBoard";
 import { BoardGameContext } from "./Providers/wordle-context";
 import { Position } from "./types/Position";
+import { keyboardKey } from "@testing-library/user-event";
 
 const boardGame: string[][] = [
   ["", "", "", "", ""],
@@ -22,25 +23,45 @@ function App() {
     letterPos: 0,
   });
 
-  // function handleKeyUp(event: string) {
-  //   const charValidation = /^[A-Z]$/.test(event);
-  //   console.log(event);
+  const handleKeyUp = (event: keyboardKey) => {
+    const keyToValidate = event.key as string;
+    const charValidation = /^[a-z]$/.test(keyToValidate);
+    if (event.key === "Backspace") {
+      return onRemoveLetter();
+    }
+    if (!charValidation) {
+      return;
+    }
+    onSelectLetter(keyToValidate.toUpperCase());
+  };
 
-  //   if (!charValidation) {
-  //     return;
-  //   }
-  //   // onAddLetter(event);
-  // }
+  useEffect(() => {
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  });
+  // useEffect(() => {
+  //   const handleKeyUp = ({ key }: { key: string }) => {
+  //     const charValidation = /^[a-z]$/.test(key);
+  //     if (key === "Backspace") {
+  //       return onRemoveLetter();
+  //     }
+  //     if (!charValidation) {
+  //       return;
+  //     }
+  //     onSelectLetter(key.toUpperCase());
+  //   };
 
-  const onAddLetter = (keyValue: string) => {
+  //   document.addEventListener("keyup", handleKeyUp);
+  //   return () => {
+  //     document.removeEventListener("keyup", handleKeyUp);
+  //   };
+  // });
+  const onSelectLetter = (keyValue: string) => {
     if (keyValue === "DEL") {
       return onRemoveLetter();
     }
-
-    // const charValidation = /^[A-Z]$/.test(keyValue);
-    // if (!charValidation) {
-    //   return;
-    // }
 
     const updatedGuessBoard = [...board];
     updatedGuessBoard[currentGuess.rowNum][currentGuess.letterPos] = keyValue;
@@ -73,14 +94,11 @@ function App() {
           setBoard,
           currentGuess,
           setCurrentGuess,
-          onAddLetter,
+          onSelectLetter,
           onRemoveLetter,
         }}
       >
-        <div
-          className="board"
-          // onKeyUp={(event) => handleKeyUp(event.key.toUpperCase())}
-        >
+        <div className="board">
           <GuessBoard />
           <KeyBoard />
         </div>
