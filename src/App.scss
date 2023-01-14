@@ -1,32 +1,54 @@
-.board {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
+* {
+  box-sizing: border-box;
 }
-
-.guessBoard-default {
-  margin-bottom: 5px;
-  .row {
+body {
+  h1 {
+    text-align: center;
+  }
+  .board {
     display: flex;
-    // flex: 33%;
-    flex-direction: row;
-    margin: 1.5px;
-    // align-items: center;
-    // text-align: center;
-    // justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 
+  .guessBoard-default {
+    margin-bottom: 5px;
+    .row {
+      display: flex;
+      flex-direction: row;
+      // flex: 33%;
+      height: 20%;
+      margin: 1.5px;
+      // align-items: center;
+      // text-align: center;
+      // justify-content: center;
+    }
     .letter-default {
+      text-align: center;
+      justify-content: center;
       width: 60px;
       height: 60px;
       margin: 1.5px;
       border: 1px solid black;
+      border-radius: 1.5px;
     }
     .letterInFocus {
       width: 60px;
       height: 60px;
       border: 2px black solid;
     }
+  }
+  #correctSpot {
+    background-color: green;
+  }
+
+  #wrongSpot {
+    background-color: yellow;
+  }
+
+  #notInAnySpot {
+    background-color: rgb(116, 131, 116);
   }
 }
 .keyboard-main {

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import KeyLetter from "./KeyLetter";
 
 function KeyBoard() {
@@ -9,20 +9,20 @@ function KeyBoard() {
   return (
     <div className="keyboard-main">
       <div className="firstKeyRow">
-        {firstRow.map((keyLetter) => {
+        {firstRow.map((keyLetter: string) => {
           return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
         })}
       </div>
       <div className="secondKeyRow">
-        {secondRow.map((keyLetter) => {
+        {secondRow.map((keyLetter: string) => {
           return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
         })}
       </div>
       <div className="thirdKeyRow">
-        {thirdRow.map((keyLetter) => {
+        {thirdRow.map((keyLetter: string) => {
           return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
         })}
-        <KeyLetter keyValue={"DEL"} id={"del"} />
+        <KeyLetter keyValue={"DEL"} id={"del"} key={"del"} />
       </div>
     </div>
   );

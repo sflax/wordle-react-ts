@@ -2,17 +2,13 @@ import React, { useContext } from "react";
 import { BoardGameContext } from "../../Providers/wordle-context";
 
 function KeyLetter({ keyValue }: any) {
-  const { onRemoveLetter, onSelectLetter } = useContext(BoardGameContext);
+  const { onSelectLetter } = useContext(BoardGameContext);
 
   const onClickLetter = () => {
-    if (keyValue === "DEL") {
-      onRemoveLetter();
-    } else {
-      onSelectLetter(keyValue);
-    }
+    onSelectLetter(keyValue);
   };
   return (
-    <button className="keyletter-button" id={keyValue} onClick={onClickLetter}>
+    <button className="keyletter-button" key={keyValue} onClick={onClickLetter}>
       {keyValue}
     </button>
   );
