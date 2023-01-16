@@ -10,17 +10,17 @@ function KeyBoard() {
     <div className="keyboard-main">
       <div className="firstKeyRow">
         {firstRow.map((keyLetter: string) => {
-          return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
+          return <KeyLetter keyValue={keyLetter} key={`key` + KeyLetter} />;
         })}
       </div>
       <div className="secondKeyRow">
         {secondRow.map((keyLetter: string) => {
-          return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
+          return <KeyLetter keyValue={keyLetter} key={`key` + KeyLetter} />;
         })}
       </div>
       <div className="thirdKeyRow">
         {thirdRow.map((keyLetter: string) => {
-          return <KeyLetter keyValue={keyLetter} key={KeyLetter} />;
+          return <KeyLetter keyValue={keyLetter} key={`key` + KeyLetter} />;
         })}
         <KeyLetter keyValue={"DEL"} id={"del"} key={"del"} />
       </div>

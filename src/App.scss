@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
 }
-body {
+.app {
+  .navbar-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   h1 {
     text-align: center;
   }
@@ -14,19 +20,19 @@ body {
 
   .guessBoard-default {
     margin-bottom: 5px;
+    text-align: center;
+    justify-content: center;
     .row {
       display: flex;
       flex-direction: row;
-      // flex: 33%;
       height: 20%;
       margin: 1.5px;
-      // align-items: center;
-      // text-align: center;
-      // justify-content: center;
     }
     .letter-default {
+      display: flex;
       text-align: center;
       justify-content: center;
+      align-items: center;
       width: 60px;
       height: 60px;
       margin: 1.5px;

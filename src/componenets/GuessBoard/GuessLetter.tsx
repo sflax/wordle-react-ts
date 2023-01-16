@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Position } from "../../types/Position";
 import { BoardGameContext } from "../../Providers/wordle-context";
 export const GuessLetter: React.FC<Position> = ({
