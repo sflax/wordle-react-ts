@@ -1,36 +1,8 @@
-import React, {
-  useReducer,
-  useState,
-  useContext,
-  useEffect,
-  useRef,
-  FormEvent,
-  ChangeEventHandler,
-} from "react";
+import React from "react";
 import Input from "./Input";
 import { User } from "../../types/User";
 import "./UserForm.scss";
 import { UserContext } from "../../context/User-context";
-
-// const userNameReducer = (state, action) => {
-//   if (action.type === "USER_INPUT") {
-//     return { value: action.val, isValid: action.val.trim().length > 0 };
-//   }
-//   if (action.type === "INPUT_BLUR") {
-//     return { value: state.value, isValid: state.value.trim().length > 0 };
-//   }
-//   return { state: "", isValid: false };
-// };
-
-// const passwordReducer = (state, action) => {
-//   if (action.type === "USER_INPUT") {
-//     return { value: action.val, isValid: action.val.trim().length > 6 };
-//   }
-//   if (action.type === "INPUT_BLUR") {
-//     return { value: state.value, isValid: state.value.trim().length > 6 };
-//   }
-//   return { state: "", isValid: false };
-// };
 
 const UserForm = () => {
   // const [formIsValid, setFormIsValid] = useState(false);

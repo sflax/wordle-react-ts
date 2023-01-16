@@ -2,6 +2,12 @@ import React, { useContext } from "react";
 import { BoardGameContext } from "../../context/wordle-context";
 import "./KeyLetter.scss";
 
+interface Key {
+  keyValue: string;
+  key: string;
+  id?: string;
+}
+
 function KeyLetter({ keyValue }: any) {
   const { onSelectLetter } = useContext(BoardGameContext);
 
