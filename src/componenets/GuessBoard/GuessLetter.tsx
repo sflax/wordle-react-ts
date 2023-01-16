@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Position } from "../../types/Position";
-import { BoardGameContext } from "../../Providers/wordle-context";
+import { BoardGameContext } from "../../context/wordle-context";
 export const GuessLetter: React.FC<Position> = ({
   letterPos,
   rowNum,

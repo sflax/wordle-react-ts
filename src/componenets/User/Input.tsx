@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { text } from "stream/consumers";
 
 function Input() {
   const inputRef = useRef<HTMLInputElement>(null);

@@ -2,26 +2,28 @@ import React from "react";
 import Input from "./Input";
 
 function User() {
+  const onSubmitHnadler = () => {};
+
   return (
     <div>
-      <form>
-        <Input
-        // Ref={emailInputRef}
-        // id="email"
-        // label="E-Mail"
-        // type="email"
-        // value={value}
-        // onChange={emailChangeHandler}
-        />
-        <Input
-        // ref={passwordInputRef}
-        // id="password"
-        // label="Password"
-        // type="password"
-        // value={value}
-        // onChange={passwordChangeHandler}
-        />
-      </form>
+      {/* <form className="form-login" onSubmit={onSubmitHnadler()}> */}
+      <Input
+      // Ref={emailInputRef}
+      // id="email"
+      // label="E-Mail"
+      // type="email"
+      // value={value}
+      // onChange={emailChangeHandler}
+      />
+      <Input
+      // ref={passwordInputRef}
+      // id="password"
+      // label="Password"
+      // type="password"
+      // value={value}
+      // onChange={passwordChangeHandler}
+      />
+      {/* </form> */}
     </div>
   );
 }

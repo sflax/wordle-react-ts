@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BoardGameContext } from "../../Providers/wordle-context";
+import { BoardGameContext } from "../../context/wordle-context";
 
 function KeyLetter({ keyValue }: any) {
   const { onSelectLetter } = useContext(BoardGameContext);
