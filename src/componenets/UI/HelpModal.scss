@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-content {
+    width: 500px;
+    background-color: white;
+    .modal-header {
+      display: flex;
+      flex-direction: column;
+      padding: 2px;
+      align-items: center;
+
+      h2,
+      p {
+        margin: 3px;
+      }
+    }
+    .modal-body {
+      padding: 10px;
+      border-top: 1.5px solid whitesmoke;
+      border-bottom: 1.5px solid whitesmoke;
+
+      h3 {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
