@@ -1,19 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useImperativeHandle, FC } from "react";
+import { InputProps } from "../../types/User";
 
-function Input() {
-  const inputRef = useRef<HTMLInputElement>(null);
+const Input: FC<InputProps> = ({ name, label, ref, type }) => {
+  // const inputRef = useRef();
+
+  // const activate = () => {
+  //   inputRef.current.focus();
+  // };
+
+  // useImperativeHandle(ref, () => {
+  //   return {
+  //     focus: activate,
+  //   };
+  // });
+
   return (
     <div>
-      <label htmlFor="text">label</label>
-      <input
-        ref={inputRef}
-        type="text"
-        id="text"
-        // value={value}
-        // onChange={onChange}
-      />
+      <label htmlFor={name}>{label}</label>
+      <input id={name} ref={ref} />
     </div>
   );
-}
+};
 
 export default Input;

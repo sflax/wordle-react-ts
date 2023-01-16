@@ -1,6 +1,7 @@
 import React from "react";
 import { RowNum } from "../../types/Position";
 import { GuessLetter } from "./GuessLetter";
+import "./GuessRow.scss";
 
 export const GuessRow: React.FC<RowNum> = ({ rowNum }) => {
   const letters: number[] = [0, 1, 2, 3, 4];

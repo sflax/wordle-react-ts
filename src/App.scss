@@ -1,79 +1,12 @@
 * {
   box-sizing: border-box;
 }
+
 .app {
-  .navbar-main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  h1 {
-    text-align: center;
-  }
-  .board {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .guessBoard-default {
-    margin-bottom: 5px;
-    text-align: center;
-    justify-content: center;
-    .row {
-      display: flex;
-      flex-direction: row;
-      height: 20%;
-      margin: 1.5px;
-    }
-    .letter-default {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 60px;
-      margin: 1.5px;
-      border: 1px solid black;
-      border-radius: 1.5px;
-    }
-    .letterInFocus {
-      width: 60px;
-      height: 60px;
-      border: 2px black solid;
-    }
-  }
-  #correctSpot {
-    background-color: green;
-  }
-
-  #wrongSpot {
-    background-color: yellow;
-  }
-
-  #notInAnySpot {
-    background-color: rgb(116, 131, 116);
-  }
-}
-.keyboard-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  // margin-bottom: 2px;
-  .firstKeyRow,
-  .secondKeyRow,
-  .thirdKeyRow {
-    display: flex;
-    gap: 2.5px;
-
-    .keyletter-button {
-      width: 40px;
-      height: 40px;
-      background-color: rgb(153, 163, 163);
-      border: 0px;
-    }
-  }
+  text-align: center;
+  background-color: #fcf9f9;
+  width: 100vw;
+  height: 100vh;
+  /* display: flex; */
+  color: rgb(6, 6, 6);
 }

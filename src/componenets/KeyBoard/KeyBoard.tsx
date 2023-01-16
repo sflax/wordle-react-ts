@@ -1,5 +1,6 @@
 import React from "react";
 import KeyLetter from "./KeyLetter";
+import "./KeyBoard.scss";
 
 function KeyBoard() {
   const firstRow: string[] = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];

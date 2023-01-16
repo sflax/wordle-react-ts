@@ -1,4 +1,5 @@
 import React from "react";
+import "./GuessBoard.scss";
 import { GuessRow } from "./GuessRow";
 
 function GuessBoard() {

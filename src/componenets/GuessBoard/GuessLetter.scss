@@ -1,0 +1,29 @@
+.letter-default {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 1.5px;
+  border: 1px solid black;
+  border-radius: 1.5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.letterInFocus {
+  width: 60px;
+  height: 60px;
+  border: 2px black solid;
+}
+
+#correctSpot {
+  background-color: #528d4e;
+}
+
+#wrongSpot {
+  background-color: #b49f39;
+}
+
+#notInAnySpot {
+  background-color: #69686d;
+}

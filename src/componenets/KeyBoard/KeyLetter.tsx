@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BoardGameContext } from "../../context/wordle-context";
+import "./KeyLetter.scss";
 
 function KeyLetter({ keyValue }: any) {
   const { onSelectLetter } = useContext(BoardGameContext);
@@ -9,7 +10,7 @@ function KeyLetter({ keyValue }: any) {
   };
   return (
     <button className="keyletter-button" key={keyValue} onClick={onClickLetter}>
-      {keyValue}
+      <span className="front">{keyValue}</span>
     </button>
   );
 }

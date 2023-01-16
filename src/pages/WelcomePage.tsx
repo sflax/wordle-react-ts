@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/User-context";
 
 function WelcomePage() {
-  return <div>WelcomePage</div>;
+  return <h1>Welcome</h1>;
 }
 
 export default WelcomePage;
