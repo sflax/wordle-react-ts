@@ -9,7 +9,10 @@
   outline-offset: 4px;
 }
 .front {
-  display: block;
+  // display: block;
+  display: flex;
+  text-align: center;
+  justify-content: center;
   padding: 12px 12px;
   border-radius: 12px;
   // font-size: 1.25rem;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./HelpModal.scss";
+import Button from "./Button";
 
 const HelpModal = (props: any) => {
   if (!props.show) {
@@ -24,29 +25,29 @@ const HelpModal = (props: any) => {
               <br />
             </li>
             <li>
-              The color of the tiles will change to shouw how close your guess
+              The color of the tiles will change to show how close your guess
               was to the word.
             </li>
           </ul>
-          <ul>
+          <ul className="list-color-map">
             <li>
-              <span className="span-color green">Green</span> means the letter
+              <span className="modal-color green">Green</span> means the letter
               is in the word and in the correct spot.
             </li>
             <li>
-              <span className="span-color yellow">Yellow</span> means the letter
-              is in the word, but is the wrong spot.
+              <span className="modal-color yellow">Yellow</span> means the
+              letter is in the word, but is the wrong spot.
             </li>
             <li>
-              <span className="span-color gray">Grey</span> means the letter is
+              <span className="modal-color gray">Grey</span> means the letter is
               not in the word at all.
             </li>
           </ul>
         </div>
         <div className="modal-footer"></div>
-        <button className="button close-help-modal" onClick={props.onClose}>
+        <Button className="close-help-modal" onClick={props.onClose}>
           Close
-        </button>
+        </Button>
       </div>
     </div>
   );

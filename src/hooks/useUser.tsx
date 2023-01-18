@@ -5,5 +5,5 @@ import { User } from "../types/User";
 export const useUser = () => {
   const [user, setUser] = useState(null);
 
-  return { user, setUser };
+  return [user, setUser];
 };

@@ -1,7 +1,12 @@
 import React from "react";
+import UserForm from "../componenets/User/UserForm";
 
 function LoginPage() {
-  return <div>LoginPage</div>;
+  return (
+    <div>
+      <UserForm />
+    </div>
+  );
 }
 
 export default LoginPage;

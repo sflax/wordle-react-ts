@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HelpModal from "../UI/HelpModal";
 import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 import "./Navbar.scss";
 
 function Navbar() {
@@ -8,13 +9,19 @@ function Navbar() {
 
   return (
     <div className="navbar-main">
-      <button id="gameRules" onClick={() => setShow(true)}>
+      <Button
+        className="button-general"
+        id="gameRules"
+        onClick={() => setShow(true)}
+      >
         Help
-      </button>
+      </Button>
       <HelpModal onClose={() => setShow(false)} show={show} />
       <h1>Wordle</h1>
-      {/* <Link to="wordle-game">aa</Link> */}
-      <button id="logout">Logout</button>
+      {/* <Link to={"wordle-game"}>aa</Link> */}
+      <Button className="button-general" id="login">
+        Login
+      </Button>
     </div>
   );
 }

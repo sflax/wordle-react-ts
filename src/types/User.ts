@@ -4,8 +4,8 @@ export interface User {
 }
 
 export interface InputProps {
-  name: string;
-  label: string;
-  type?: "password" | "email";
-  ref?: string;
+  className: string;
+  id: string;
+  type: string | "password" | "email";
+  placeholder: string;
 }
