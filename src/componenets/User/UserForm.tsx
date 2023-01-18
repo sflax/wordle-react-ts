@@ -15,7 +15,7 @@ const UserForm = () => {
       userName: userTarget.userName.value,
       password: userTarget.password.value,
     };
-    userContext.setUser({ ...userData });
+    // userContext.setUser({ ...userData });
   };
 
   return (
