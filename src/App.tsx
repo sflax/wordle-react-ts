@@ -10,8 +10,8 @@ import GamePage from "./pages/GamePage";
 function App() {
   return (
     <div className="app">
-      {/* <UserForm /> */}
-      <GamePage />
+      <UserForm />
+      {/* <GamePage /> */}
     </div>
   );
 }

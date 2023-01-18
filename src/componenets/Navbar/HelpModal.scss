@@ -14,7 +14,8 @@
     margin-left: auto;
     margin-right: auto;
     width: 500px;
-    background-color: white;
+    background-color: whitesmoke;
+    border-radius: 5px;
     .modal-header {
       display: flex;
       flex-direction: column;
@@ -28,8 +29,6 @@
     }
     .modal-body {
       padding: 10px;
-      border-top: 1.5px solid whitesmoke;
-      border-bottom: 1.5px solid whitesmoke;
 
       h3 {
         display: flex;
@@ -38,6 +37,10 @@
     }
     .close-help-modal {
       position: sticky;
+      top: 0;
+      left: 47.5%;
+      justify-content: center;
+      margin-bottom: 3px;
     }
     .list-color-map {
       margin: 15px 0 15px;

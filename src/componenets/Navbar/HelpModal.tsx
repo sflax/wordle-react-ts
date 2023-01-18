@@ -1,6 +1,6 @@
 import React from "react";
 import "./HelpModal.scss";
-import Button from "./Button";
+import Button from "../UI/Button";
 
 const HelpModal = (props: any) => {
   if (!props.show) {
@@ -45,7 +45,10 @@ const HelpModal = (props: any) => {
           </ul>
         </div>
         <div className="modal-footer"></div>
-        <Button className="close-help-modal" onClick={props.onClose}>
+        <Button
+          className={"close-help-modal button-general"}
+          onClick={props.onClose}
+        >
           Close
         </Button>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HelpModal from "../UI/HelpModal";
+import HelpModal from "./HelpModal";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button";
 import "./Navbar.scss";
