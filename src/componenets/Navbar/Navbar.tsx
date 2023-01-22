@@ -9,7 +9,7 @@ import { Navigate, useNavigate, Link } from "react-router-dom";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
-  
+
   const navigate = useNavigate();
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);

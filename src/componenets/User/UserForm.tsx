@@ -6,7 +6,7 @@ import { UserContext } from "../../context/User-context";
 import { useNavigate } from "react-router-dom";
 
 const UserForm = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -15,17 +15,9 @@ const UserForm = () => {
       userName: userTarget.userName.value,
       password: userTarget.password.value,
     };
-    console.log(userData.userName, userData.password);
-
-    // userLoginHandler(userData.userName)
     localStorage.setItem("user", userData.userName);
     setUser({ userName: userData.userName, password: userData.password });
-    console.log(user);
-    navigate("/game");
-
-    // const userLoginHandler = (userName ) => {
-    //   onUserLoginToGame(userName)
-    // }
+    // navigate("/game");
   };
 
   return (

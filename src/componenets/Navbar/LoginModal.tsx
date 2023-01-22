@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Button from "../UI/Button";
 import UserForm from "../User/UserForm";
 import { UserContext } from "../../context/User-context";
-
 const LoginModal = (props: any) => {
   const { user, setUser } = useContext(UserContext);
 
