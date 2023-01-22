@@ -1,10 +1,5 @@
-// import React from "react";
 import { useState, useEffect } from "react";
-// import "./App.scss";
-// import Navbar from "./componenets/Navbar/Navbar";
-// import GuessBoard from "./componenets/GuessBoard/GuessBoard";
-// import KeyBoard from "./componenets/KeyBoard/KeyBoard";
-// import { BoardGameContext } from "./context/wordle-context";
+
 import { Position } from "../types/Position";
 import { GameStatus } from "../types/GameStatus";
 import { keyboardKey } from "@testing-library/user-event";

@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./App.scss";
-import UserForm from "./componenets/User/UserForm";
-
+import { UserContext } from "./context/User-context";
 import GamePage from "./pages/GamePage";
-// import { Position } from "./types/Position";
-// import { GameStatus } from "./types/GameStatus";
-// import { keyboardKey } from "@testing-library/user-event";
+import WelcomePage from "./pages/WelcomePage";
+import Navbar from "./componenets/Navbar/Navbar";
+import UserForm from "./componenets/User/UserForm";
+import { Outlet } from "react-router-dom";
+import { useUser } from "./hooks/useUser";
+// import { BoardGameContext } from "./context/wordle-context";
 
 function App() {
+  // const [user, setUser] = useState([]);
+  // const { showWelcomePage, setShowWelcomePage } = useWordle();
+  const userContext = useContext(UserContext);
   return (
-    <div className="app">
-      {/* <UserForm /> */}
-      <GamePage />
-    </div>
+    //define class for width 100 instead of the "app"
+    <>
+      <UserContext.Provider value={useUser()}>
+        {/* <UserForm /> */}
+        {<Navbar />}
+        {<Outlet />}
+      </UserContext.Provider>
+    </>
   );
 }
 

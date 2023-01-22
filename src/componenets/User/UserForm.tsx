@@ -3,11 +3,11 @@ import Input from "../UI/Input";
 import Button from "../UI/Button";
 import "./UserForm.scss";
 import { UserContext } from "../../context/User-context";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserForm = () => {
-  const userContext = useContext(UserContext);
-
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
   const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const userTarget = event.currentTarget;
@@ -15,7 +15,17 @@ const UserForm = () => {
       userName: userTarget.userName.value,
       password: userTarget.password.value,
     };
-    // userContext.setUser({ ...userData });
+    console.log(userData.userName, userData.password);
+
+    // userLoginHandler(userData.userName)
+    localStorage.setItem("user", userData.userName);
+    setUser({ userName: userData.userName, password: userData.password });
+    console.log(user);
+    navigate("/game");
+
+    // const userLoginHandler = (userName ) => {
+    //   onUserLoginToGame(userName)
+    // }
   };
 
   return (
@@ -33,7 +43,7 @@ const UserForm = () => {
           type="password"
           placeholder="Please enter password"
         />
-        <Button className="button-general" type={"submit"} value={"submit"}>
+        <Button className="button-general" type="submit" value="submit">
           Submit
         </Button>
       </form>

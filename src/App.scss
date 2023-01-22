@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  color: black;
 }
 
 .app {
@@ -9,4 +10,8 @@
   height: 100vh;
   /* display: flex; */
   color: rgb(6, 6, 6);
+}
+
+a:link {
+  text-decoration: none;
 }

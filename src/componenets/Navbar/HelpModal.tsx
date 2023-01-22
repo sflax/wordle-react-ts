@@ -3,7 +3,7 @@ import "./HelpModal.scss";
 import Button from "../UI/Button";
 
 const HelpModal = (props: any) => {
-  if (!props.show) {
+  if (!props.showHelpModal) {
     return null;
   }
 

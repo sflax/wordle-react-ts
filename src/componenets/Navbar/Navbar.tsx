@@ -1,27 +1,80 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import HelpModal from "./HelpModal";
-import { Link } from "react-router-dom";
+import LoginModal from "./LoginModal";
 import Button from "../UI/Button";
 import "./Navbar.scss";
+import { NavigationContext } from "../../context/Navigation-context";
+import { UserContext } from "../../context/User-context";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 
 function Navbar() {
-  const [show, setShow] = useState<boolean>(false);
+  const { user, setUser } = useContext(UserContext);
+  
+  const navigate = useNavigate();
+  const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
+
+  const [showLogout, setShowLogot] = useState<boolean>(false);
+
+  const showHelpModalHandler = () => setShowHelpModal(true);
+  const HideHelpModalHandler = () => setShowHelpModal(false);
+
+  const showLoginHandler = () => {
+    setShowLoginModal(true);
+    setShowLogot(true);
+  };
+
+  const HideLogintModalHandler = () => setShowLoginModal(false);
+
+  if (localStorage.getItem("user")) {
+    setUser(localStorage.getItem("user"));
+  }
+
+  const onLogoutHandler = () => {
+    setShowLoginModal(true);
+    localStorage.clear();
+    setUser("");
+    navigate("/welcome");
+  };
 
   return (
     <div className="navbar-main">
       <Button
         className="button-general"
         id="gameRules"
-        onClick={() => setShow(true)}
+        onClick={showHelpModalHandler}
       >
         Help
       </Button>
-      <HelpModal onClose={() => setShow(false)} show={show} />
-      <h1>Wordle</h1>
-      {/* <Link to={"wordle-game"}>aa</Link> */}
-      <Button className="button-general" id="login">
-        Login
-      </Button>
+      <HelpModal onClose={HideHelpModalHandler} showHelpModal={showHelpModal} />
+      <Link to={"/welcome"}>
+        <h1>Wordle</h1>
+      </Link>
+
+      {!user ? (
+        <Button className="button-general" onClick={onLogoutHandler}>
+          Logout
+        </Button>
+      ) : null}
+      {
+        <Button
+          className="button-general"
+          id="loginHandler"
+          onClick={showLoginHandler}
+        >
+          Login
+        </Button>
+      }
+
+      {/* {user ? (
+        <Button className="button-general" onClick={onLogoutHandler}>
+          Logout
+        </Button>
+      ) : null} */}
+      <LoginModal
+        onClose={HideLogintModalHandler}
+        showLoginModal={showLoginModal}
+      />
     </div>
   );
 }
