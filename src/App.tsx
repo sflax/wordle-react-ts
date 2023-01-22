@@ -4,6 +4,7 @@ import { UserContext } from "./context/User-context";
 import GamePage from "./pages/GamePage";
 import WelcomePage from "./pages/WelcomePage";
 import Navbar from "./componenets/Navbar/Navbar";
+import UserForm from "./componenets/User/UserForm";
 import { Outlet, useNavigation } from "react-router-dom";
 import { useUser } from "./hooks/useUser";
 import { NavigationContext } from "./context/Navigation-context";
@@ -20,7 +21,6 @@ function App() {
         <NavigationContext.Provider value={useNavigation()}>
           {/* <UserForm /> */}
           {<Navbar />}
-          {<WelcomePage />}
           {<Outlet />}
         </NavigationContext.Provider>
       </UserContext.Provider>

@@ -14,14 +14,14 @@ function Navbar() {
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
 
-  const [showLogout, setShowLogot] = useState<boolean>(false);
+  // const [showLogout, setShowLogot] = useState<boolean>(false);
 
-  const showHelpModalHandler = () => setShowHelpModal(true);
-  const HideHelpModalHandler = () => setShowHelpModal(false);
+  // const showHelpModalHandler = () => setShowHelpModal(true);
+  // const HideHelpModalHandler = () => setShowHelpModal(false);
 
   const showLoginHandler = () => {
     setShowLoginModal(true);
-    setShowLogot(true);
+    // setShowLogot(true);
   };
 
   const HideLogintModalHandler = () => setShowLoginModal(false);
@@ -31,7 +31,7 @@ function Navbar() {
   }
 
   const onLogoutHandler = () => {
-    setShowLoginModal(true);
+    // setShowLoginModal(true);
     localStorage.clear();
     setUser("");
     navigate("/welcome");
@@ -42,21 +42,24 @@ function Navbar() {
       <Button
         className="button-general"
         id="gameRules"
-        onClick={showHelpModalHandler}
+        onClick={() => setShowHelpModal(true)}
       >
         Help
       </Button>
-      <HelpModal onClose={HideHelpModalHandler} showHelpModal={showHelpModal} />
+      <HelpModal
+        onClose={() => setShowHelpModal(false)}
+        showHelpModal={showHelpModal}
+      />
       <Link to={"/welcome"}>
         <h1>Wordle</h1>
       </Link>
 
-      {!user ? (
+      {user ? (
         <Button className="button-general" onClick={onLogoutHandler}>
           Logout
         </Button>
       ) : null}
-      {
+      {!user ? (
         <Button
           className="button-general"
           id="loginHandler"
@@ -64,7 +67,7 @@ function Navbar() {
         >
           Login
         </Button>
-      }
+      ) : null}
 
       <LoginModal
         onClose={HideLogintModalHandler}

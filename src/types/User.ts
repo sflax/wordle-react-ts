@@ -9,3 +9,8 @@ export interface InputProps {
   type: string | "password" | "email";
   placeholder: string;
 }
+
+export interface LoginProps {
+  showLoginModal: boolean;
+  onClose: () => void;
+}

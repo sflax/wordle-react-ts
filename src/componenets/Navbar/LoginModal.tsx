@@ -1,26 +1,35 @@
-import React, { useContext } from "react";
+import React, { useCallback } from "react";
 import "./LoginModal.scss";
 import Button from "../UI/Button";
 import UserForm from "../User/UserForm";
-import { UserContext } from "../../context/User-context";
-const LoginModal = (props: any) => {
-  const { user, setUser } = useContext(UserContext);
+import { LoginProps } from "../../types/User";
 
-  if (!props.showLoginModal) {
+// import { UserContext } from "../../context/User-context";
+
+const LoginModal: React.FC<LoginProps> = ({ showLoginModal, onClose }) => {
+  const handleFormSubmit = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  if (!showLoginModal) {
     return null;
   }
 
   return (
-    <div className="modal" onClick={props.onClose}>
+    <div className="modal" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>Hello Guest</h2>
           <p>Please enter username and password</p>
         </div>
         <div className="modal-body">
-          <UserForm />
+          <UserForm onSubmit={handleFormSubmit} />
         </div>
-        <div className="modal-footer"></div>
+        <div className="modal-footer">
+          {/* <Button className="button-general" onClick={onClose}>
+            Close
+          </Button> */}
+        </div>
       </div>
     </div>
   );

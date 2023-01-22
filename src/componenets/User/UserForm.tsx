@@ -5,10 +5,15 @@ import "./UserForm.scss";
 import { UserContext } from "../../context/User-context";
 import { useNavigate } from "react-router-dom";
 
-const UserForm = () => {
+interface Props {
+  onSubmit: () => void;
+}
+
+const UserForm: React.FC<Props> = ({ onSubmit }) => {
   // const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
-  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const userTarget = event.currentTarget;
     const userData = {
@@ -17,12 +22,12 @@ const UserForm = () => {
     };
     localStorage.setItem("user", userData.userName);
     setUser({ userName: userData.userName, password: userData.password });
-    // navigate("/game");
+    onSubmit();
   };
 
   return (
     <div>
-      <form className="userForm" onSubmit={(event) => onSubmitHandler(event)}>
+      <form className="userForm" onSubmit={(event) => handleSubmit(event)}>
         <Input
           className="input-default input-upper"
           id="userName"
