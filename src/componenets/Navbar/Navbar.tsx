@@ -66,11 +66,6 @@ function Navbar() {
         </Button>
       }
 
-      {/* {user ? (
-        <Button className="button-general" onClick={onLogoutHandler}>
-          Logout
-        </Button>
-      ) : null} */}
       <LoginModal
         onClose={HideLogintModalHandler}
         showLoginModal={showLoginModal}

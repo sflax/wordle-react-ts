@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "./LoginModal.scss";
 import Button from "../UI/Button";
 import UserForm from "../User/UserForm";
 import { UserContext } from "../../context/User-context";

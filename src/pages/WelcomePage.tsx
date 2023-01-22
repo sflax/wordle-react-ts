@@ -1,16 +1,25 @@
 import { UserContext } from "../context/User-context";
+import { NavigationContext } from "../context/Navigation-context";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "../componenets/UI/Button";
-import UserForm from "../componenets/User/UserForm";
+import "./WelcomePage.scss";
 
 function WelcomePage() {
   const { user } = useContext(UserContext);
   return (
-    <div>
+    <div className="welcomePage-default">
       <h1>Welcome</h1>
-      {user ? <h2>{user.userName}</h2> : <h2>Guest</h2>}
-      <NavLink to={"/wordle-game"}>Click here to play</NavLink>
+      {user ? (
+        <div>
+          <h2>{user.userName}</h2>
+          <NavLink to={"/game"}>Click here to play</NavLink>
+        </div>
+      ) : (
+        <div>
+          <h2>Guest</h2>
+          <p>Please login to start playing</p>
+        </div>
+      )}
     </div>
   );
 }

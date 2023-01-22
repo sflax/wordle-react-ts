@@ -4,7 +4,6 @@ import { UserContext } from "./context/User-context";
 import GamePage from "./pages/GamePage";
 import WelcomePage from "./pages/WelcomePage";
 import Navbar from "./componenets/Navbar/Navbar";
-import UserForm from "./componenets/User/UserForm";
 import { Outlet, useNavigation } from "react-router-dom";
 import { useUser } from "./hooks/useUser";
 import { NavigationContext } from "./context/Navigation-context";
@@ -17,13 +16,14 @@ function App() {
   return (
     //define class for width 100 instead of the "app"
     <>
-      <NavigationContext.Provider value={useNavigation()}>
-        <UserContext.Provider value={useUser()}>
+      <UserContext.Provider value={useUser()}>
+        <NavigationContext.Provider value={useNavigation()}>
           {/* <UserForm /> */}
           {<Navbar />}
+          {<WelcomePage />}
           {<Outlet />}
-        </UserContext.Provider>
-      </NavigationContext.Provider>
+        </NavigationContext.Provider>
+      </UserContext.Provider>
     </>
   );
 }
