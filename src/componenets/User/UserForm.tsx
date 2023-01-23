@@ -24,7 +24,6 @@ const UserForm: React.FC<FormProps> = ({ onSubmit }) => {
     const password = userData.password;
     localStorage.setItem("user", userData.userName);
     setUser({ userName: user, password: password });
-    console.log(user);
 
     onSubmit();
   };
