@@ -6,20 +6,24 @@ import "./WelcomePage.scss";
 
 function WelcomePage() {
   const { user } = useContext(UserContext);
+  const navigationContext = useContext(NavigationContext);
+
   return (
-    <div className="welcomePage-default">
-      <h1>Welcome</h1>
-      {user ? (
-        <div>
-          <h2>{user.userName}</h2>
-          <NavLink to={"/game"}>Click here to play</NavLink>
-        </div>
-      ) : (
-        <div>
-          <h2>Guest</h2>
-          <p>Please login to start playing</p>
-        </div>
-      )}
+    <div className="welcomePage-wrapper">
+      <div className="welcomePage-default">
+        <h1>Welcome</h1>
+        {user ? (
+          <div>
+            <h2>{user}</h2>
+            <NavLink to={"/game"}>Click here to play</NavLink>
+          </div>
+        ) : (
+          <div>
+            <h2>Guest</h2>
+            <p>Please login to start playing</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

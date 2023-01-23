@@ -5,7 +5,7 @@ import Button from "../UI/Button";
 import "./Navbar.scss";
 import { NavigationContext } from "../../context/Navigation-context";
 import { UserContext } from "../../context/User-context";
-import { Navigate, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
@@ -14,14 +14,8 @@ function Navbar() {
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
 
-  // const [showLogout, setShowLogot] = useState<boolean>(false);
-
-  // const showHelpModalHandler = () => setShowHelpModal(true);
-  // const HideHelpModalHandler = () => setShowHelpModal(false);
-
   const showLoginHandler = () => {
     setShowLoginModal(true);
-    // setShowLogot(true);
   };
 
   const HideLogintModalHandler = () => setShowLoginModal(false);
@@ -31,7 +25,6 @@ function Navbar() {
   }
 
   const onLogoutHandler = () => {
-    // setShowLoginModal(true);
     localStorage.clear();
     setUser("");
     navigate("/welcome");

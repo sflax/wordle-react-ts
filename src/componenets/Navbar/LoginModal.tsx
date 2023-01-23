@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import "./LoginModal.scss";
-import Button from "../UI/Button";
 import UserForm from "../User/UserForm";
 import { LoginProps } from "../../types/User";
 
@@ -25,11 +24,7 @@ const LoginModal: React.FC<LoginProps> = ({ showLoginModal, onClose }) => {
         <div className="modal-body">
           <UserForm onSubmit={handleFormSubmit} />
         </div>
-        <div className="modal-footer">
-          {/* <Button className="button-general" onClick={onClose}>
-            Close
-          </Button> */}
-        </div>
+        <div className="modal-footer"></div>
       </div>
     </div>
   );

@@ -5,11 +5,11 @@ import "./UserForm.scss";
 import { UserContext } from "../../context/User-context";
 import { useNavigate } from "react-router-dom";
 
-interface Props {
+interface FormProps {
   onSubmit: () => void;
 }
 
-const UserForm: React.FC<Props> = ({ onSubmit }) => {
+const UserForm: React.FC<FormProps> = ({ onSubmit }) => {
   // const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
 
@@ -20,8 +20,12 @@ const UserForm: React.FC<Props> = ({ onSubmit }) => {
       userName: userTarget.userName.value,
       password: userTarget.password.value,
     };
+    const user = userData.userName;
+    const password = userData.password;
     localStorage.setItem("user", userData.userName);
-    setUser({ userName: userData.userName, password: userData.password });
+    setUser({ userName: user, password: password });
+    console.log(user);
+
     onSubmit();
   };
 
