@@ -1,13 +1,12 @@
 import { UserContext } from "../context/User-context";
-import { NavigationContext } from "../context/Navigation-context";
+// import { NavigationContext } from "../context/Navigation-context";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./WelcomePage.scss";
 
 function WelcomePage() {
   const { user } = useContext(UserContext);
-  const navigationContext = useContext(NavigationContext);
-
+  // const navigationContext = useContext(NavigationContext);
   return (
     <div className="welcomePage-wrapper">
       <div className="welcomePage-default">
@@ -15,7 +14,9 @@ function WelcomePage() {
         {user ? (
           <div>
             <h2>{user}</h2>
-            <NavLink to={"/game"}>Click here to play</NavLink>
+            <NavLink to={"/game"} id="linkToGame">
+              Click here to play
+            </NavLink>
           </div>
         ) : (
           <div>

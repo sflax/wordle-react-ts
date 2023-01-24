@@ -5,11 +5,10 @@ import GamePage from "../pages/GamePage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
       {
-        path: "/welcome",
+        path: "/",
         element: <WelcomePage />,
       },
       {
