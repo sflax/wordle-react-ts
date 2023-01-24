@@ -12,7 +12,7 @@ function Navbar() {
   // const { showLoginModal, setShowLoginModal, showHelpModal, setShowHelpModal } =
   //   useContext(NavigationContext);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [showHelpModal, setShowHelpModal] = useState<boolean>(false);
   const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
 

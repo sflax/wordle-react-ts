@@ -58,6 +58,7 @@ function useWordle() {
     if (currentGuess.letterPos === 4) {
       let userInput = board[currentGuess.rowNum];
       console.log(userInput);
+      wordExistanceVerificationHandler(userInput);
 
       setCurrentGuess({
         letterPos: 0,
@@ -74,22 +75,24 @@ function useWordle() {
     setCurrentGuess({ ...currentGuess, letterPos: currentGuess.letterPos - 1 });
   };
 
-  // const wordExistanceVerificationHandler = () => {
-  //   //handler that helps checking whether the word the user entered exists in the DB
-  //   let userInputWord = "";
-  //   for (let char = 0; char < 5; char++) {
-  //     userInputWord += board[currentGuess.rowNum][char];
-  //   }
+  const wordExistanceVerificationHandler = (wordToCompare: string[]) => {
+    //handler that helps checking whether the word the user entered exists in the DB
+    let userInputWord = "";
+    for (let char = 0; char < 5; char++) {
+      userInputWord += board[currentGuess.rowNum][char];
+      // console.log(userInputWord);
+    }
 
-  //   if (userInputWord === temporaryWordToCompare) {
-  //   }
+    if (userInputWord === temporaryWordToCompare) {
+      alert("You won");
+    }
 
-  //  if (wordsDB.includes(userInputWord)){
-  //   setCurrentGuess({rowNum: currentGuess.rowNum + 1, letterPos:0})
-  //  } else {
-  // return
-  //add popup
-  // };
+    //  if (wordsDB.includes(userInputWord)){
+    //   setCurrentGuess({rowNum: currentGuess.rowNum + 1, letterPos:0})
+    //  } else {
+    // return
+    // add popup
+  };
 
   // const gameStatusHandler = () => {
   //   let message = "";
