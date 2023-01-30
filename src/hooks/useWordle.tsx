@@ -73,22 +73,14 @@ function useWordle() {
   };
 
   async function wordExistanceVerificationHandler(wordToCompare: string[]) {
-    let letterColor = "";
     let userInput = "";
 
     for (let char = 0; char < wordToCompare.length; char++) {
-      // userInput += wordToCompare[char];
-      if (wordToCompare[char] === temporaryWordToCompare[char]) {
-        letterColor = "correctSpot";
-      } else if (temporaryWordToCompare.includes(wordToCompare[char])) {
-        letterColor = "wrongSpot";
-      } else {
-        letterColor = "notInAnySpot";
-      }
-      if (userInput === temporaryWordToCompare) {
-        alert("you won");
-      }
-      return letterColor;
+      userInput += wordToCompare[char];
+    }
+    if (userInput === temporaryWordToCompare) {
+      alert("you won");
+      window.location.reload();
     }
   }
 
