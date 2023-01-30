@@ -8,11 +8,7 @@ export const GuessRow: React.FC<RowNum> = ({ rowNum }) => {
   return (
     <div className="row">
       {letters.map((letter) => (
-        <GuessLetter
-          letterPos={letter}
-          rowNum={rowNum}
-          key={`${rowNum}${letter}`}
-        />
+        <GuessLetter letterPos={letter} rowNum={rowNum} key={`${rowNum}${letter}`} />
       ))}
     </div>
   );

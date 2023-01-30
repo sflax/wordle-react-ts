@@ -11,34 +11,19 @@ function KeyBoard() {
     <div className="keyboard-main">
       <div className="firstKeyRow">
         {firstRow.map((keyLetter) => {
-          return (
-            <KeyLetter
-              keyValue={keyLetter}
-              key={KeyLetter + Math.random().toString()}
-            />
-          );
+          return <KeyLetter keyValue={keyLetter} key={KeyLetter + Math.random().toString()} />;
         })}
       </div>
       <div className="secondKeyRow">
         {secondRow.map((keyLetter) => {
-          return (
-            <KeyLetter
-              keyValue={keyLetter}
-              key={KeyLetter + Math.random().toString()}
-            />
-          );
+          return <KeyLetter keyValue={keyLetter} key={KeyLetter + Math.random().toString()} />;
         })}
       </div>
       <div className="thirdKeyRow">
         {thirdRow.map((keyLetter) => {
-          return (
-            <KeyLetter
-              keyValue={keyLetter}
-              key={KeyLetter + Math.random().toString()}
-            />
-          );
+          return <KeyLetter keyValue={keyLetter} key={KeyLetter + Math.random().toString()} />;
         })}
-        <KeyLetter keyValue={"DEL"} id={"del"} key={"del"} />
+        <KeyLetter keyValue={"DEL"} key={"del"} />
       </div>
     </div>
   );

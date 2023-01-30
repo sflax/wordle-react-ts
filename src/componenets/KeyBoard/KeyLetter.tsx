@@ -6,8 +6,9 @@ function KeyLetter({ keyValue }: any) {
   const { onSelectLetter } = useContext(BoardGameContext);
 
   const onClickLetter = () => {
-    onSelectLetter(keyValue);
+    return onSelectLetter(keyValue);
   };
+
   return (
     <button className="keyletter-button" key={keyValue} onClick={onClickLetter}>
       <span className="front">{keyValue}</span>

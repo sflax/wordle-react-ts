@@ -1,3 +1,8 @@
+server side is working as stand alone.
+I need to refactor the client side so the server side and client side logic will work together.
+To open the server you can run "npm start" and get the random word.
+link to server side: https://github.com/sflax/wordle-server-ts.git
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

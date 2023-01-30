@@ -31,17 +31,10 @@ function Navbar() {
 
   return (
     <div className="navbar-main">
-      <Button
-        className="button-general"
-        id="gameRules"
-        onClick={() => setShowHelpModal(true)}
-      >
+      <Button className="button-general" id="gameRules" onClick={() => setShowHelpModal(true)}>
         Help
       </Button>
-      <HelpModal
-        onClose={() => setShowHelpModal(false)}
-        showHelpModal={showHelpModal}
-      />
+      <HelpModal onClose={() => setShowHelpModal(false)} showHelpModal={showHelpModal} />
       <Link to={"/welcome"}>
         <h1>Wordle {user ? user : ""}</h1>
       </Link>
@@ -51,19 +44,12 @@ function Navbar() {
         </Button>
       ) : null}
       {!user ? (
-        <Button
-          className="button-general"
-          id="loginHandler"
-          onClick={showLoginHandler}
-        >
+        <Button className="button-general" id="loginHandler" onClick={showLoginHandler}>
           Login
         </Button>
       ) : null}
 
-      <LoginModal
-        onClose={HideLogintModalHandler}
-        showLoginModal={showLoginModal}
-      />
+      <LoginModal onClose={HideLogintModalHandler} showLoginModal={showLoginModal} />
     </div>
   );
 }

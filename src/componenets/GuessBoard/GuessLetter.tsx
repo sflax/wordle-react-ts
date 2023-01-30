@@ -3,40 +3,32 @@ import { Position } from "../../types/Position";
 import { BoardGameContext } from "../../context/wordle-context";
 import "./GuessLetter.scss";
 
-export const GuessLetter: React.FC<Position> = ({
-  letterPos,
-  rowNum,
-}: Position) => {
-  const { board, currentGuess, temporaryWordToCompare } =
-    useContext(BoardGameContext);
-  const letter = board[rowNum][letterPos];
+export const GuessLetter: React.FC<Position> = ({ letterPos, rowNum }: Position) => {
+  const { board, currentGuess, temporaryWordToCompare } = useContext(BoardGameContext);
+  let letter = board[rowNum][letterPos];
 
-  const defineGuessLetterTileStatus = () => {
-    const correctSpot = temporaryWordToCompare[letterPos] === letter;
-    if (currentGuess.rowNum > rowNum) {
-      if (correctSpot) {
-        return "correctSpot";
-      } else if (!correctSpot && temporaryWordToCompare.includes(letter)) {
-        return "wrongSpot";
-      } else {
-        return "notInAnySpot";
-      }
+  const correctSpot = temporaryWordToCompare[letterPos] === letter;
+  let letterColor = "";
+  if (currentGuess.rowNum > rowNum) {
+    if (correctSpot) {
+      letterColor = "correctSpot";
+    } else if (!correctSpot && temporaryWordToCompare.includes(letter)) {
+      letterColor = "wrongSpot";
+    } else {
+      letterColor = "notInAnySpot";
     }
+  }
+
+  const focusLetter = () => {
+    if (currentGuess.letterPos === letterPos && currentGuess.rowNum === rowNum) {
+      return "letterInFocus";
+    }
+    return "letter-default";
   };
 
-  const focusLetter: boolean =
-    letterPos === currentGuess.letterPos && rowNum === currentGuess.rowNum;
-
   return (
-    <div
-      className={focusLetter ? "letterInFocus" : "letter-default"}
-      data-rownum={rowNum}
-      data-letterpos={letterPos}
-      id={`${defineGuessLetterTileStatus()}`}
-    >
+    <div className={focusLetter()} data-rownum={rowNum} data-letterpos={letterPos} id={letterColor}>
       {letter}
     </div>
   );
 };
-
-// export default GuessLetter;

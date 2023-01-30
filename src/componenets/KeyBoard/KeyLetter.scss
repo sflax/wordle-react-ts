@@ -24,3 +24,15 @@
 .keyletter-button:active .front {
   transform: translateY(-2px);
 }
+
+#correctSpot {
+  background-color: #528d4e;
+}
+
+#wrongSpot {
+  background-color: #b49f39;
+}
+
+#notInAnySpot {
+  background-color: #69686d;
+}
